@@ -87,7 +87,6 @@
 #include "functions\Village\BotStopped.au3"
 #include "functions\Village\UpgradeWall.au3"
 #include "functions\Village\UpgradeBuilding.au3"
-#include "functions\Village\UpgradeHero.au3"
 #include "functions\Village\VillageReport.au3"
 #include "functions\Village\CheckCostPerSearch.au3"
 #include "functions\Village\UpTroops.au3"

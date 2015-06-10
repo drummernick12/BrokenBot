@@ -232,10 +232,6 @@ Global $itxtUpgradeY5
 Global $itxtUpgradeX6
 Global $itxtUpgradeY6
 
-Global $ichkUpgradeBK
-Global $ichkUpgradeAQ
-Global $itxtMinHeroDE
-
 Global $txtSpellCap
 
 ;General Settings
