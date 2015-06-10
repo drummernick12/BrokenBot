@@ -4,12 +4,11 @@
 Func Standard_SetSleep($type)
 	Switch $type
 		Case 0
-			$delay = ($icmbUnitDelay + 1) * 5 ;Random Gaussian is always positive, compensate for that
-			$delay = _Random_Gaussian($delay, $delay/3.1)
+			$delay = ($icmbUnitDelay + 1) * 20 ;Random Gaussian is always positive, compensate for that
 		Case 1
-			$delay = ($icmbWaveDelay + 1) * 50
-			$delay = _Random_Gaussian($delay, $delay/3.1)
+			$delay = ($icmbWaveDelay + 1) * 200
 	EndSwitch
+	$delay = _Random_Gaussian($delay, $delay/3.1)
 	If $delay < 1 Then $delay = 1
 	Return $delay
 EndFunc   ;==>Standard_SetSleep
@@ -655,8 +654,9 @@ Func Standard_Attack($AttackMethod = 1)
 EndFunc   ;==>Standard_Attack
 
 Func Standard_DropNukes()
-	;No need to check dark storage again, already checked during search
-	;If checkDarkElix() Then
+	;Only check dark storage again when necessary
+	If $DEx+$DEy = 0 Then checkDarkElix()
+	If $DEx+$DEy > 0 Then
 		$nLSpell = -1
 		$nSpellQty = 0
 		For $i = 0 To 8
@@ -679,7 +679,7 @@ Func Standard_DropNukes()
 				$z = $z + 1
 			Until $nSpellQty = 0 Or $z = 100
 		EndIf
-	;EndIf
+	EndIf
 EndFunc   ;==>Standard_DropNukes
 
 ;Drops Clan Castle troops, given the slot and x, y coordinates.

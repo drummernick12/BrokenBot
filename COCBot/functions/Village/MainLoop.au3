@@ -35,7 +35,7 @@ Func runBot() ;Bot that runs everything in order
 		BoostAllBuilding()
 		If StatusCheck() Then Return
 
-		Collect()
+		collectResources()
 		If StatusCheck() Then Return
 
 		Laboratory()
@@ -59,6 +59,9 @@ Func runBot() ;Bot that runs everything in order
 
 				While True
 					If StatusCheck() Then Return
+
+					If Not Call($strPlugInInUse & "_miniReadyCheck") Then ExitLoop
+
 					If PrepareSearch() Then
 						$AttackType = Call($strPlugInInUse & "_Search")
 						If BotStopped(False) Then Return
@@ -109,7 +112,7 @@ Func Idle($Plugin) ;Sequence that runs until Full Army
 		If StatusCheck() Then Return
 		SetLog(GetLangText("msgWaitingFull"), $COLOR_PURPLE)
 		If $iCollectCounter > $COLLECTATCOUNT Then ; This is prevent from collecting all the time which isn't needed anyway
-			Collect()
+			collectResources()
 			If StatusCheck() Then Return
 			$iCollectCounter = 0
 		EndIf

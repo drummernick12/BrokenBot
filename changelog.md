@@ -1,8 +1,32 @@
 ## Change Log:
 
+### v2.8.0
+* Major stability enhancements
+* Speed optimization - we cut the time it takes to find a well hidden TH by 60% from our previous release. It now takes 1.2sec on average vs never finding it or taking 20 seconds like our competitors.  **speedBoost must be enabled.
+* Precision enhancements - We have reduced our image recognition error rate from 4% down to 2.4% - Nearly 10 times better than other bots!
+* Resource collection - we had to lower the thresholds to make sure we collect some of your harder to detect resources. The side-effect is you will see it clicking walls sometimes for a fraction of a second. This is expected and controlled, it will not perform an erroneous action.
+* Implemented speedBoost - found on the config tab. Check this to locate DE and TH faster at the cost of more CPU load during searching.
+* Fixed PushBullet. We now check the server for up to 3 new commands once every minute.  Bot may respond to commands slightly slower but this will prevent us from being blocked from using their servers.
+* Various bug fixes related to searching.
+
+### v2.7.1
+* Improved townhall recognition.  No, seriously.  It is so much better than it was before!  No more trying to attack outside townhalls that don't exist or skipping over perfectly good bases with tons of loot just because the bot can't recognize the townhall.
+* Some more dark elixir storage tweaks.  We are trying to make sure you don't waste those zaps.
+* Moved resource collection to our improved image recognition system.
+
+### v2.7.0
+* Improved image recognition system.  Does a much better job of finding the dark elixir storage.
+* Search delay is randomized now.  You still use the same UI selection for the general speed of searching but the actual speed is randomized near the value you select.
+* Donation blacklist now added.  If you check the box to turn on blacklist then it will not donate to people if the words you list are anywhere in the request text.
+* You may now specify having a King or Queen available as a search condition. For example: if you specify that you require the King and Queen both for live bases then it will only search for dead bases until your King or Queen are available.
+* Hid some options for upgrading that didn't function properly. Will be reinstated once fixed.
+* Main loop sped up.  Less time just sitting there waiting while it's doing something.
+* Various speed and stability improvements.
+
 ### v2.6.0
 * Much faster troop deployment.  Might not want to do 1/1 anymore
 * Temporary fix for those whose camp numbers can't be read. Unfortunately this may reintroduce a problem where training gets stuck for those people.  If you have this issue please temporarily use barracks training mode until this can be fully fixed.
+
 ### v2.5.9
 * Emergency fix for occasional crash
 
