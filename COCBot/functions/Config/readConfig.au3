@@ -43,8 +43,15 @@ Func readConfig() ;Reads config and sets it to the variables
 	; Upgrade settings ---------------------------------------------------------------------
 	;---------------------------------------------------------------------------------------
 	$ichkWalls = IniRead($config, "upgrade", "auto-wall", "0")
-	$icmbWalls = IniRead($config, "upgrade", "walllvl", "0")
-	$iUseStorage = IniRead($config, "upgrade", "use-storage", "0")
+	$icmbWalls = IniRead($config, "upgrade", "walllvlG", "0")
+	$icmbWallsE = IniRead($config, "upgrade", "walllvlE", "0")
+	$iWallUseGold = IniRead($config,"upgrade","wallusegold","0")
+	$iWallUseElixer = IniRead($config,"upgrade","walluseelix","0")
+
+	
+	;$iUseStorage = IniRead($config, "upgrade", "use-storage", "0")
+	
+	
 	$itxtWallMinGold = IniRead($config, "upgrade", "minwallgold", "0")
 	$itxtWallMinElixir = IniRead($config, "upgrade", "minwallelixir", "0")
 	$icmbTolerance = IniRead($config, "upgrade", "walltolerance", "0")

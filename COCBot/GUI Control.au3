@@ -391,7 +391,6 @@ Func btnFindWall()
 	GUICtrlSetState($chkWalls, $GUI_DISABLE)
 	GUICtrlSetState($UseGold, $GUI_DISABLE)
 	GUICtrlSetState($UseElixir, $GUI_DISABLE)
-	GUICtrlSetState($UseGoldElix, $GUI_DISABLE)
 	While 1
 		SaveConfig()
 		readConfig()
@@ -403,7 +402,25 @@ Func btnFindWall()
 	GUICtrlSetState($chkWalls, $GUI_ENABLE)
 	GUICtrlSetState($UseGold, $GUI_ENABLE)
 	GUICtrlSetState($UseElixir, $GUI_ENABLE)
-	GUICtrlSetState($UseGoldElix, $GUI_ENABLE)
+	$Running = False
+EndFunc   ;==>btnFindWall
+
+Func btnFindWallElix()
+	$Running = True
+	GUICtrlSetState($chkWalls, $GUI_DISABLE)
+	GUICtrlSetState($UseGold, $GUI_DISABLE)
+	GUICtrlSetState($UseElixir, $GUI_DISABLE)
+	While 1
+		SaveConfig()
+		readConfig()
+		applyConfig()
+		ZoomOut()
+		FindWallE()
+		ExitLoop
+	WEnd
+	GUICtrlSetState($chkWalls, $GUI_ENABLE)
+	GUICtrlSetState($UseGold, $GUI_ENABLE)
+	GUICtrlSetState($UseElixir, $GUI_ENABLE)
 	$Running = False
 EndFunc   ;==>btnFindWall
 

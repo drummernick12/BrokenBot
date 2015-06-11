@@ -202,7 +202,10 @@ Global $BuildPos3[2]
 Global $CurMinion, $CurHog, $CurValkyrie
 Global $ichkWalls
 Global $icmbWalls
-Global $iUseStorage
+Global $icmbWallsE
+Global $iWallUseGold
+Global $iWallUseElixer
+;Global $iUseStorage
 Global $itxtWallMinGold
 Global $itxtWallMinElixir
 Global $icmbTolerance
