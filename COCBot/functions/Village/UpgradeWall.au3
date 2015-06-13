@@ -38,7 +38,7 @@ Func UpgradeWallelix()
 		Return
 	EndIf
 
-	checkWallE
+	checkWallE()
 	If $checkwalllogic Then
 		Click(1, 1) ; Click Away
 		_Sleep(600)
