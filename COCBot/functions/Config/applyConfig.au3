@@ -66,17 +66,32 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	Else
 		GUICtrlSetState($chkWalls, $GUI_UNCHECKED)
 	EndIf
+	
 	_GUICtrlComboBox_SetCurSel($cmbWalls, $icmbWalls)
+	_GUICtrlComboBox_SetCurSel($cmbWallsE, $icmbWallsE)
 	_GUICtrlComboBox_SetCurSel($cmbTolerance, $icmbTolerance)
+	
+	If $iWallUseGold = 1 Then
+		GUICtrlSetState($UseGold, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($UseGold, $GUI_UNCHECKED)
+	EndIf
+	
+	If $iWallUseElixer = 1 Then
+		GUICtrlSetState($UseElixir, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($UseElixir, $GUI_UNCHECKED)
+	EndIf
+	
 
-	Switch $iUseStorage
-		Case 0
-			GUICtrlSetState($UseGold, $GUI_CHECKED)
-		Case 1
-			GUICtrlSetState($UseElixir, $GUI_CHECKED)
-		Case 2
-			GUICtrlSetState($UseGoldElix, $GUI_CHECKED)
-	EndSwitch
+	;Switch $iUseStorage
+	;	Case 0
+	;		GUICtrlSetState($UseGold, $GUI_CHECKED)
+	;	Case 1
+	;		GUICtrlSetState($UseElixir, $GUI_CHECKED)
+	;	Case 2
+	;		GUICtrlSetState($UseGoldElix, $GUI_CHECKED)
+	;EndSwitch
 
 	GUICtrlSetData($txtWallMinGold, $itxtWallMinGold)
 	GUICtrlSetData($txtWallMinElixir, $itxtWallMinElixir)

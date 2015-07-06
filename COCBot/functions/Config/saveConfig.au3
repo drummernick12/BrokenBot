@@ -102,15 +102,26 @@ Func saveConfig() ;Saves the controls settings to the config
 	Else
 		IniWrite($config, "upgrade", "auto-wall", 0)
 	EndIf
-	IniWrite($config, "upgrade", "walllvl", _GUICtrlComboBox_GetCurSel($cmbWalls))
+	IniWrite($config, "upgrade", "walllvlG", _GUICtrlComboBox_GetCurSel($cmbWalls))
+	IniWrite($config, "upgrade", "walllvlE", _GUICtrlComboBox_GetCurSel($cmbWallsE))
 	IniWrite($config, "upgrade", "walltolerance", _GUICtrlComboBox_GetCurSel($cmbTolerance))
 	If IsChecked($UseGold) Then
-		IniWrite($config, "upgrade", "use-storage", 0)
-	ElseIf IsChecked($UseElixir) Then
-		IniWrite($config, "upgrade", "use-storage", 1)
-	ElseIf IsChecked($UseGoldElix) Then
-		IniWrite($config, "upgrade", "use-storage", 2)
+		IniWrite($config, "upgrade", "wallusegold", 1)
+	Else
+		IniWrite($config, "upgrade", "wallusegold", 0)
 	EndIf
+	If IsChecked($UseElixir) Then
+		IniWrite($config, "upgrade", "walluseelix", 1)
+	Else
+		IniWrite($config, "upgrade", "walluseelix", 0)
+	EndIf
+	;If IsChecked($UseGold) Then
+	;	IniWrite($config, "upgrade", "use-storage", 0)
+	;ElseIf IsChecked($UseElixir) Then
+	;	IniWrite($config, "upgrade", "use-storage", 1)
+	;ElseIf IsChecked($UseGoldElix) Then
+	;	IniWrite($config, "upgrade", "use-storage", 2)
+	;EndIf
 	IniWrite($config, "upgrade", "minwallgold", GUICtrlRead($txtWallMinGold))
 	IniWrite($config, "upgrade", "minwallelixir", GUICtrlRead($txtWallMinElixir))
 
