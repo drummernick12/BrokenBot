@@ -81,13 +81,28 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	GUICtrlSetData($txtWallMinGold, $itxtWallMinGold)
 	GUICtrlSetData($txtWallMinElixir, $itxtWallMinElixir)
 
-	;Lab
-	If $ichkLab = 1 Then
-		GUICtrlSetState($chkLab, $GUI_CHECKED)
+
+;Hero
+	GUICtrlSetData($txtMinHeroDE, $itxtMinHeroDE)
+	If $ichkUpgradeBK = 1 Then
+		GUICtrlSetState($chkUpgradeBK, $GUI_CHECKED)
 	Else
-		GUICtrlSetState($chkLab, $GUI_UNCHECKED)
+		GUICtrlSetState($chkUpgradeBK, $GUI_UNCHECKED)
 	EndIf
-	_GUICtrlComboBox_SetCurSel($cmbLaboratory, $icmbLaboratory)
+	
+	If $ichkUpgradeAQ = 1 Then
+		GUICtrlSetState($chkUpgradeAQ, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkUpgradeAQ, $GUI_UNCHECKED)
+	EndIf
+
+;Lab
+    If $ichkLab = 1 Then
+        GUICtrlSetState($chkLab, $GUI_CHECKED)
+    Else
+        GUICtrlSetState($chkLab, $GUI_UNCHECKED)
+    EndIf
+    _GUICtrlComboBox_SetCurSel($cmbLaboratory, $icmbLaboratory)
 
 	;General Settings--------------------------------------------------------------------------
 	If $frmBotPosX <> -32000 Then
